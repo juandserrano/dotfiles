@@ -6,6 +6,8 @@ set shiftwidth=4
 set expandtab
 set smartindent
 set relativenumber
+set nu
+set nohlsearch
 set nowrap
 set ignorecase
 set smartcase
@@ -14,64 +16,88 @@ set nobackup
 set undodir=~/.nvim/undodir
 set undofile
 set incsearch
-
+set scrolloff=8
+set encoding=utf8
+let g:airline_powerline_fonts = 1
 set colorcolumn=80
 highlight ColorColumn ctermbg=0 guibg=lightgrey
 
 call plug#begin('/Users/juan/.local/share/nvim/site/plugged')
-" Yes, I am a sneaky snek now
-Plug 'ambv/black'
+Plug 'junegunn/fzf', {'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'pangloss/vim-javascript'
+Plug 'peitalin/vim-jsx-typescript'
+Plug 'leafgarland/typescript-vim'
+Plug 'dracula/vim'
+Plug 'scrooloose/nerdtree'
+Plug 'SirVer/ultisnips'
+Plug 'epilande/vim-react-snippets'
+Plug 'ryanoasis/vim-devicons'
+Plug 'neoclide/coc.nvim', {'branch':'release'}
+Plug 'mattn/emmet-vim'
+let g:coc_global_extensions = ['coc-tsserver',
+\'coc-python',
+\ 'coc-pydocstring',
+\ 'coc-json',
+\ 'coc-html-css-support',
+\ 'coc-css',
+\ 'coc-sql',
+\ 'coc-yaml']
+" Plug 'sheerun/vim-polyglot',
+Plug 'preservim/nerdcommenter'
+Plug 'jparise/vim-graphql'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+" post install (yarn install | npm install) then load plugin only for editing supported files
+Plug 'jiangmiao/auto-pairs'
+Plug 'prettier/vim-prettier', {
+\ 'do': 'yarn install',
+\ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
+Plug 'lervag/vimtex'
 
-" Plebvim lsp Plugins
- Plug 'neovim/nvim-lspconfig'
- Plug 'hrsh7th/nvim-compe'
-Plug 'nvim-lua/completion-nvim'
-Plug 'glepnir/lspsaga.nvim'
-Plug 'simrat39/symbols-outline.nvim'
-Plug 'tjdevries/nlua.nvim'
-Plug 'tjdevries/lsp_extensions.nvim'
-
-" Neovim Tree shitter
-" Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-" Plug 'nvim-treesitter/playground'
-
-" Debugger Plugins
-"Plug 'puremourning/vimspector'
-"Plug 'szw/vim-maximizer'
-
-" THANKS BFREDL
-"Plug '/home/mpaulson/personal/contextprint.nvim'
-
-"Plug 'rust-lang/rust.vim'
-"Plug 'tweekmonster/gofmt.vim'
-Plug 'tpope/vim-fugitive'
-"Plug 'junegunn/gv.vim'
-Plug 'vim-utils/vim-man'
-Plug 'mbbill/undotree'
-"Plug 'tpope/vim-dispatch'
-Plug 'theprimeagen/vim-be-good'
-Plug 'gruvbox-community/gruvbox'
-"Plug 'tpope/vim-projectionist'
-
-" telescope requirements...
-Plug 'nvim-lua/popup.nvim'
-Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim'
-Plug 'nvim-telescope/telescope-fzy-native.nvim'
-
-Plug 'flazz/vim-colorschemes'
-"Plug 'chriskempson/base16-vim'
-
-" HARPOON!!
-"Plug '/home/mpaulson/personal/rfc-reader'
-"Plug 'mhinz/vim-rfc'
-
-" prettier
-Plug 'sbdchd/neoformat'
-
-" should I try another status bar???
-Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
-" Plug 'hoob3rt/lualine.nvim'
 call plug#end()
 
-colorscheme gruvbox
+if (has("termguicolors"))
+set termguicolors
+endif
+syntax enable
+colorscheme dracula
+
+" colorscheme gruvbox
+" let g:airline_theme='base16_gruvbox_dark_hard'
+" let g:airline_powerline_fonts=1
+let maplocalleader = "\\"
+let mapleader = " "
+" Find files using Telescope command-line sugar.
+nnoremap <leader>pv :Vex<CR>
+nnoremap <leader>pf :Files<CR>
+nnoremap <C-p> :GFiles<CR>
+
+let g:NERDTreeShowHidden = 1
+let g:NERDTreeMinimalUI = 0
+let g:NERDTreeIgnore = ['node_modules']
+let NERDTreeStatusLine='NERDTree'
+" Automaticaly close nvim if NERDTree is only thing left open
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+" Toggle
+" nnoremap <silent> <C-a> :NERDTreeToggle<CR>
+nnoremap <leader>nt :NERDTreeFind<CR>
+nnoremap <leader>t :NERDTreeFind<CR>
+
+" open new split panes to right and below
+set splitright
+set splitbelow
+" turn terminal to normal mode with escape
+tnoremap <Esc> <C-\><C-n>
+" start terminal in insert mode
+au BufEnter * if &buftype == 'terminal' | :startinsert | endif
+" open terminal on ctrl+n
+function! OpenTerminal()
+split term://zsh
+resize 10
+endfunction
+nnoremap <c-n> :call OpenTerminal()<CR>
+let g:vimtex_compiler_method = 'tectonic'
+let g:prettier#autoformat_config_present = 1
+let g:prettier#config#config_precedence = 'prefer-file'
+
