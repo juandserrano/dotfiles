@@ -70,9 +70,9 @@ let maplocalleader = "\\"
 let mapleader = " "
 " Find files using Telescope command-line sugar.
 nnoremap <leader>pv :Vex<CR>
-nnoremap <leader>pf :Files<CR>
+nnoremap <leader>f :Files<CR>
 nnoremap <C-p> :GFiles<CR>
-
+nnoremap <localleader>tt :!tectonic %<CR>
 let g:NERDTreeShowHidden = 1
 let g:NERDTreeMinimalUI = 0
 let g:NERDTreeIgnore = ['node_modules']

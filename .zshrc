@@ -4,12 +4,12 @@ alias fm="vifm ~"
 alias fm.="vifm ."
 alias c="cat"
 # COLLEGE FOLDERS ALIASES
-alias cdl3="cd ~/Google\ Drive/Computer\ Programmer/Level\ 3 && ls -xX"
-alias cdbi="cd ~/Google\ Drive/Computer\ Programmer/Level\ 3 /BI\ and\ Data\ Analytics && ls -xX"
-alias cdgui="cd ~/Google\ Drive/Computer\ Programmer/Level\ 3/Mobile\ GUI && ls -xX"
-alias cdnet="cd ~/Google\ Drive/Computer\ Programmer/Level\ 3/Network\ Programming && ls -xX"
-alias cdpat="cd ~/Google\ Drive/Computer\ Programmer/Level\ 3/OOP\ Design\ Patterns && ls -xX"
-alias cdanal="cd ~/Google\ Drive/Computer\ Programmer/Level\ 3/Systems\ Analysis\ and\ Design && ls -xX"
+alias cdl3="cd ~/Google\ Drive/computer-programmer/level-3 && ls -xX"
+alias cdbi="cd ~/Google\ Drive/computer-programmer/level-3/BI\ and\ Data\ Analytics && ls -xX"
+alias cdgui="cd ~/Google\ Drive/computer-programmer/level-3/Mobile\ GUI && ls -xX"
+alias cdnet="cd ~/Google\ Drive/computer-programmer/level-3/Network\ Programming && ls -xX"
+alias cdpat="cd ~/Google\ Drive/computer-programmer/level-3/OOP\ Design\ Patterns && ls -xX"
+alias cdanal="cd ~/Google\ Drive/computer-programmer/level-3/systems-analysis-and-design && ls -xX"
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:/Users/juan/nvim-osx64/bin:/usr/local/texlive/2021/bin/universal-darwin:$PATH
 
