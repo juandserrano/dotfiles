@@ -20,6 +20,8 @@ set scrolloff=8
 set encoding=utf8
 let g:airline_powerline_fonts = 1
 set colorcolumn=80
+set spell
+set spelllang=es,en
 highlight ColorColumn ctermbg=0 guibg=lightgrey
 
 call plug#begin('/Users/juan/.local/share/nvim/site/plugged')
