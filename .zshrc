@@ -114,9 +114,9 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # bindkey -v
-if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
-    tmux attach -t default || tmux new -s default
-fi
+# if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
+#     tmux attach -t default || tmux new -s default
+# fi
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/Users/juan/.sdkman"
 [[ -s "/Users/juan/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/juan/.sdkman/bin/sdkman-init.sh"

@@ -120,6 +120,9 @@ ctrl + alt + cmd - 4 : yabai -m window --space  4; yabai -m space --focus 4
 ctrl + cmd + alt - 1  : yabai -m window --display 1; yabai -m display --focus 1
 ctrl + cmd + alt - 2  : yabai -m window --display 2; yabai -m display --focus 2
 
+# Change layout to stack/bsp
+ctrl + alt - space : yabai -m config layout stack;
+shift + alt - space : yabai -m config layout bsp;
 # move floating window
 # shift + ctrl - a : yabai -m window --move rel:-20:0
 # shift + ctrl - s : yabai -m window --move rel:0:20

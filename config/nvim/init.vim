@@ -56,43 +56,24 @@ Plug 'prettier/vim-prettier', {
 \ 'do': 'yarn install',
 \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
 Plug 'lervag/vimtex'
-
+Plug 'morhetz/gruvbox'
 call plug#end()
 
 if (has("termguicolors"))
 set termguicolors
 endif
 syntax enable
-colorscheme dracula
+" colorscheme dracula
 
-" colorscheme gruvbox
-" let g:airline_theme='base16_gruvbox_dark_hard'
-" let g:airline_powerline_fonts=1
+colorscheme gruvbox
+let g:airline_theme='base16_gruvbox_dark_hard'
 let maplocalleader = "\\"
 let mapleader = " "
 " Find files using Telescope command-line sugar.
 nnoremap <leader>pv :Vex<CR>
 nnoremap <leader>f :Files<CR>
-nnoremap <C-p> :GFiles<CR>
 nnoremap <localleader>tt :!tectonic %<CR>
-let g:NERDTreeShowHidden = 1
-let g:NERDTreeMinimalUI = 0
-let g:NERDTreeIgnore = ['node_modules']
-let NERDTreeStatusLine='NERDTree'
-" Automaticaly close nvim if NERDTree is only thing left open
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-" Toggle
-" nnoremap <silent> <C-a> :NERDTreeToggle<CR>
-nnoremap <leader>nt :NERDTreeFind<CR>
-nnoremap <leader>t :NERDTreeFind<CR>
 
-" open new split panes to right and below
-set splitright
-set splitbelow
-" turn terminal to normal mode with escape
-tnoremap <Esc> <C-\><C-n>
-" start terminal in insert mode
-au BufEnter * if &buftype == 'terminal' | :startinsert | endif
 " open terminal on ctrl+n
 function! OpenTerminal()
 split term://zsh
