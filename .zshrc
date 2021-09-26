@@ -10,6 +10,10 @@ alias cdgui="cd ~/Google\ Drive/computer-programmer/level-3/Mobile\ GUI && ls -x
 alias cdnet="cd ~/Google\ Drive/computer-programmer/level-3/Network\ Programming && ls -xX"
 alias cdpat="cd ~/Google\ Drive/computer-programmer/level-3/OOP\ Design\ Patterns && ls -xX"
 alias cdanal="cd ~/Google\ Drive/computer-programmer/level-3/systems-analysis-and-design && ls -xX"
+
+# set vi mode for zsh
+set -o vi 
+
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:/Users/juan/nvim-osx64/bin:/usr/local/texlive/2021/bin/universal-darwin:$PATH
 
