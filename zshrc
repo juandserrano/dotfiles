@@ -1,4 +1,5 @@
 # PROGRAM ALIASES
+alias tmuxin="exec tmux"
 alias v="nvim"
 alias fm="vifm ~"
 alias fm.="vifm ."
