@@ -1,9 +1,3 @@
-# PROGRAM ALIASES
-alias tmuxin="exec tmux"
-alias v="nvim"
-alias fm="vifm ~"
-alias fm.="vifm ."
-alias c="cat"
 # COLLEGE FOLDERS ALIASES
 alias cdl3="cd ~/Google\ Drive/computer-programmer/level-3 && ls -xX"
 alias cdbi="cd ~/Google\ Drive/computer-programmer/level-3/BI\ and\ Data\ Analytics && ls -xX"
@@ -12,13 +6,9 @@ alias cdnet="cd ~/Google\ Drive/computer-programmer/level-3/Network\ Programming
 alias cdpat="cd ~/Google\ Drive/computer-programmer/level-3/OOP\ Design\ Patterns && ls -xX"
 alias cdanal="cd ~/Google\ Drive/computer-programmer/level-3/systems-analysis-and-design && ls -xX"
 
-# set vi mode for zsh
-set -o vi 
-
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:/Users/juan/nvim-osx64/bin:/usr/local/texlive/2021/bin/universal-darwin:$PATH
 
-neofetch
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/juan/.oh-my-zsh"
 
@@ -27,6 +17,7 @@ export ZSH="/Users/juan/.oh-my-zsh"
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="avit"
+#ZSH_THEME="risto"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -117,6 +108,12 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# PROGRAM ALIASES
+alias tmuxin="exec tmux"
+alias vi="nvim"
+alias c="clear"
+alias "?"="lynxduckgo"
 
 # bindkey -v
 # if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then

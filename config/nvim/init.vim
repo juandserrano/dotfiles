@@ -1,8 +1,8 @@
 syntax on
 
 set noerrorbells
-set tabstop=4 softtabstop=4
-set shiftwidth=4
+set tabstop=2 softtabstop=2
+set shiftwidth=2
 set expandtab
 set smartindent
 set relativenumber
@@ -45,12 +45,8 @@ let g:coc_global_extensions = ['coc-tsserver',
 \ 'coc-css',
 \ 'coc-sql',
 \ 'coc-yaml']
-" Plug 'sheerun/vim-polyglot',
-Plug 'preservim/nerdcommenter'
-Plug 'jparise/vim-graphql'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-" post install (yarn install | npm install) then load plugin only for editing supported files
 Plug 'jiangmiao/auto-pairs'
 Plug 'prettier/vim-prettier', {
 \ 'do': 'yarn install',
@@ -63,24 +59,15 @@ if (has("termguicolors"))
 set termguicolors
 endif
 syntax enable
-" colorscheme dracula
 
 colorscheme gruvbox
 let g:airline_theme='base16_gruvbox_dark_hard'
 let maplocalleader = "\\"
 let mapleader = " "
 " Find files using Telescope command-line sugar.
-nnoremap <leader>pv :Vex<CR>
 nnoremap <leader>f :Files<CR>
 nnoremap <localleader>tt :!tectonic %<CR>
 
-" open terminal on ctrl+n
-function! OpenTerminal()
-split term://zsh
-resize 10
-endfunction
-nnoremap <c-n> :call OpenTerminal()<CR>
 let g:vimtex_compiler_method = 'tectonic'
 let g:prettier#autoformat_config_present = 1
 let g:prettier#config#config_precedence = 'prefer-file'
-
