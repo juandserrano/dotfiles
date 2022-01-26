@@ -58,6 +58,18 @@ let mapleader = " "
 "nnoremap <silent> <Leader>f :Files<CR>
 nnoremap <silent> <Leader>gs :Git status<CR>
 nnoremap <silent> <Leader>ff :Telescope find_files<CR>
+nnoremap n nzz
+nnoremap N Nzz
+nnoremap Q <nop>
+nnoremap Y y$
+tnoremap <Esc><Esc> <C-\><C-n>
+
+augroup AuYank
+	autocmd!
+	autocmd TextYankPost *
+		\ lua vim.highlight.on_yank{higroup="IncSearch", timeout=200, on_visual=true}
+augroup END
+
 
 if (has("termguicolors"))
   set termguicolors
