@@ -23,6 +23,7 @@ set encoding=utf8
 set colorcolumn=80
 "set spell
 "set spelllang=en
+set list
 highlight ColorColumn ctermbg=0 guibg=lightgrey
 
 call plug#begin('/Users/juan/.local/share/nvim/site/plugged')
