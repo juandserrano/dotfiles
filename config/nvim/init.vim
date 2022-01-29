@@ -21,10 +21,12 @@ set scrolloff=8
 set encoding=utf8
 "let g:airline_powerline_fonts = 1
 set colorcolumn=80
+set cursorline
 "set spell
 "set spelllang=en
 set list
 highlight ColorColumn ctermbg=0 guibg=lightgrey
+highlight CursorLine ctermbg=60 guibg=#353535
 
 call plug#begin('/Users/juan/.local/share/nvim/site/plugged')
 "Plug 'Mofiqul/dracula.nvim'
