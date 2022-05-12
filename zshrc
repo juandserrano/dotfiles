@@ -105,7 +105,6 @@ source $ZSH/oh-my-zsh.sh
 
 # PROGRAM ALIASES
 alias tmuxin="exec tmux"
-alias vi="nvim"
 alias c="clear"
 alias "?"="lynxduckgo"
 
