@@ -29,7 +29,6 @@ highlight ColorColumn ctermbg=0 guibg=lightgrey
 highlight CursorLine ctermbg=60 guibg=#353535
 
 call plug#begin('/Users/juan/.local/share/nvim/site/plugged')
-"Plug 'Mofiqul/dracula.nvim'
 Plug 'nvim-lualine/lualine.nvim'
 " If you want to have icons in your statusline choose one of these
 "Plug 'vim-airline/vim-airline'
@@ -46,12 +45,11 @@ Plug 'L3MON4D3/LuaSnip'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-"Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-"Plug 'junegunn/fzf.vim'
+Plug 'kyazdani42/nvim-web-devicons' " for file icons
+Plug 'kyazdani42/nvim-tree.lua'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'jiangmiao/auto-pairs'
-"Plug 'morhetz/gruvbox'
 Plug 'sainnhe/sonokai'
 Plug 'catppuccin/nvim', {'as': 'catppuccin'}
 call plug#end()
@@ -61,6 +59,7 @@ let mapleader = " "
 "nnoremap <silent> <Leader>f :Files<CR>
 nnoremap <silent> <Leader>gs :Git status<CR>
 nnoremap <silent> <Leader>ff :Telescope find_files<CR>
+nnoremap <Leader>e :NvimTreeToggle<CR>
 nnoremap n nzz
 nnoremap N Nzz
 nnoremap Q <nop>
@@ -86,15 +85,18 @@ colorscheme catppuccin
 set completeopt=menu,menuone,noselect
 
 lua << EOF
+require'nvim-tree'.setup {
+}
+
 require'nvim-treesitter.configs'.setup {
   -- A list of parser names, or "all"
-  ensure_installed = { "lua", "go", "bash" },
+  ensure_installed = { "lua", "go", "bash", "typescript", "css"},
 
   -- Install parsers synchronously (only applied to `ensure_installed`)
   sync_install = false,
 
   -- List of parsers to ignore installing (for "all")
-  ignore_install = { "javascript" },
+  ignore_install = { "javascript", "css" },
 
   highlight = {
     -- `false` will disable the whole extension
@@ -104,7 +106,7 @@ require'nvim-treesitter.configs'.setup {
     -- disable highlighting for the `tex` filetype, you need to include `latex` in this list as this is
     -- the name of the parser)
     -- list of language that will be disabled
-    disable = { "c", "rust" },
+    disable = { "c", "rust", "javascript", "css" },
 
     -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
     -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
@@ -176,7 +178,7 @@ local on_attach = function(client, bufnr)
 --  buf_set_keymap('n', '<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
 end
 -- Enable some language servers with the additional completion capabilities offered by nvim-cmp
-local servers = { 'clangd', 'rust_analyzer', 'pyright', 'tsserver', 'gopls' }
+local servers = { 'clangd', 'rust_analyzer', 'pyright', 'tsserver', 'gopls'}
 for _, lsp in ipairs(servers) do
  lspconfig[lsp].setup {
     on_attach = on_attach,
