@@ -6,7 +6,6 @@ return require('packer').startup(function()
   use 'nvim-lualine/lualine.nvim'
 -- LSP
   use 'neovim/nvim-lspconfig'
-  use 'nvim-lua/completion-nvim'
   use 'hrsh7th/nvim-cmp'
   use 'hrsh7th/cmp-nvim-lsp'
   use 'hrsh7th/cmp-buffer'
