@@ -1,7 +1,7 @@
 # COLLEGE FOLDERS ALIASES
 
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:/Users/juan/nvim-osx64/bin:/usr/local/texlive/2021/bin/universal-darwin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:/Users/juan/nvim-osx64/bin:/usr/local/texlive/2021/bin/universal-darwin:$HOME/go/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/juan/.oh-my-zsh"

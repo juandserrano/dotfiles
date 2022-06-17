@@ -1,3 +1,5 @@
+vim.opt.completeopt={"menu", "menuone", "noselect"}
+
 local lspconfig = require'lspconfig'
 
 -- Add additional capabilities supported by nvim-cmp
