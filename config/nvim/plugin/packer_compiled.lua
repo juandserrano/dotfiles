@@ -134,6 +134,11 @@ _G.packer_plugins = {
     path = "/Users/juan/.local/share/nvim/site/pack/packer/start/nvim-dap-virtual-text",
     url = "https://github.com/theHamsta/nvim-dap-virtual-text"
   },
+  ["nvim-lsp-installer"] = {
+    loaded = true,
+    path = "/Users/juan/.local/share/nvim/site/pack/packer/start/nvim-lsp-installer",
+    url = "https://github.com/williamboman/nvim-lsp-installer"
+  },
   ["nvim-lspconfig"] = {
     loaded = true,
     path = "/Users/juan/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
@@ -179,6 +184,11 @@ _G.packer_plugins = {
     path = "/Users/juan/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
+  ["vim-css-color"] = {
+    loaded = true,
+    path = "/Users/juan/.local/share/nvim/site/pack/packer/start/vim-css-color",
+    url = "https://github.com/ap/vim-css-color"
+  },
   ["vim-fugitive"] = {
     loaded = true,
     path = "/Users/juan/.local/share/nvim/site/pack/packer/start/vim-fugitive",
@@ -188,6 +198,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/juan/.local/share/nvim/site/pack/packer/start/vim-gitgutter",
     url = "https://github.com/airblade/vim-gitgutter"
+  },
+  ["vim-prettier"] = {
+    loaded = true,
+    path = "/Users/juan/.local/share/nvim/site/pack/packer/start/vim-prettier",
+    url = "https://github.com/prettier/vim-prettier"
   }
 }
 

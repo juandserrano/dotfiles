@@ -37,6 +37,9 @@ key_mapper('n', 'Q', '<nop>')
 key_mapper('n', 'Y', 'y$')
 key_mapper('t', '<esc><esc>', '<c-\\><c-n>')
 
+-- GitGutter
+key_mapper('n', '[v', ':GitGutterPreviewHunk<CR>')
+
 -- DAP
 key_mapper('n', '<leader>db', ':lua require"dap".toggle_breakpoint()<CR>')
 key_mapper('n', '<leader>dc', ':lua require"dap".continue()<CR>')

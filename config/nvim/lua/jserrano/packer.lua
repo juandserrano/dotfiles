@@ -5,6 +5,7 @@ return require('packer').startup(function()
 
   use 'nvim-lualine/lualine.nvim'
 -- LSP
+  use 'williamboman/nvim-lsp-installer'
   use 'neovim/nvim-lspconfig'
   use 'hrsh7th/nvim-cmp'
   use 'hrsh7th/cmp-nvim-lsp'
@@ -29,5 +30,11 @@ return require('packer').startup(function()
   use 'rcarriga/nvim-dap-ui'
   use 'theHamsta/nvim-dap-virtual-text'
   use 'nvim-telescope/telescope-dap.nvim'
+-- Others
+  use 'ap/vim-css-color'
+  use {
+        'prettier/vim-prettier',
+        run = 'yarn install --frozen-lockfile --production'
+    }
 end)
 
