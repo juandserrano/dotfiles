@@ -27,6 +27,7 @@ vim.o.cursorline = true
 vim.o.list = true
 
 vim.cmd('colorscheme sonokai')
+vim.cmd('hi! Normal ctermbg=NONE guibg=NONE')
 
 -- Plugin setups
 require('nvim-tree').setup{
