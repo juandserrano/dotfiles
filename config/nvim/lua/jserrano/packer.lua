@@ -36,5 +36,6 @@ return require('packer').startup(function()
         'prettier/vim-prettier',
         run = 'yarn install --frozen-lockfile --production'
     }
+    use "Pocco81/AutoSave.nvim"
 end)
 
