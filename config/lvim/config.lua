@@ -11,7 +11,6 @@ vim.opt.relativenumber = true
 lvim.log.level = "info"
 lvim.format_on_save = {
   enabled = true,
-  pattern = "*.lua",
   timeout = 1000,
 }
 -- to disable icons and use a minimalist setup, uncomment the following
@@ -22,6 +21,7 @@ lvim.leader = "space"
 -- add your own keymapping
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 
+lvim.transparent_window = true
 -- Better search
 lvim.keys.normal_mode["n"] = "nzz"
 lvim.keys.normal_mode["N"] = "Nzz"
@@ -84,38 +84,42 @@ lvim.builtin.treesitter.auto_install = true
 -- end
 
 -- -- linters, formatters and code actions <https://www.lunarvim.org/docs/languages#lintingformatting>
--- local formatters = require "lvim.lsp.null-ls.formatters"
--- formatters.setup {
---   { command = "stylua" },
---   {
---     command = "prettier",
---     extra_args = { "--print-width", "100" },
---     filetypes = { "typescript", "typescriptreact" },
---   },
--- }
--- local linters = require "lvim.lsp.null-ls.linters"
--- linters.setup {
---   { command = "flake8", filetypes = { "python" } },
---   {
---     command = "shellcheck",
---     args = { "--severity", "warning" },
---   },
--- }
--- local code_actions = require "lvim.lsp.null-ls.code_actions"
--- code_actions.setup {
---   {
---     exe = "eslint",
---     filetypes = { "typescript", "typescriptreact" },
---   },
--- }
+local formatters = require "lvim.lsp.null-ls.formatters"
+formatters.setup {
+  { command = "stylua" },
+  {
+    command = "prettier",
+    extra_args = { "--print-width", "100" },
+    filetypes = { "typescript", "typescriptreact" },
+  },
+  {
+    command = "goimports",
+    filetypes = { "golang" }
+  },
+  -- }
+  -- local linters = require "lvim.lsp.null-ls.linters"
+  -- linters.setup {
+  --   { command = "flake8", filetypes = { "python" } },
+  --   {
+  --     command = "shellcheck",
+  --     args = { "--severity", "warning" },
+  --   },
+  -- }
+  -- local code_actions = require "lvim.lsp.null-ls.code_actions"
+  -- code_actions.setup {
+  --   {
+  --     exe = "eslint",
+  --     filetypes = { "typescript", "typescriptreact" },
+  --   },
+  -- }
 
--- -- Additional Plugins <https://www.lunarvim.org/docs/plugins#user-plugins>
--- lvim.plugins = {
---     {
---       "folke/trouble.nvim",
---       cmd = "TroubleToggle",
---     },
--- }
+  -- -- Additional Plugins <https://www.lunarvim.org/docs/plugins#user-plugins>
+  -- lvim.plugins = {
+  --     {
+  --       "folke/trouble.nvim",
+  --       cmd = "TroubleToggle",
+  --     },
+}
 lvim.plugins = {
   "olexsmir/gopher.nvim",
   "leoluz/nvim-dap-go",
