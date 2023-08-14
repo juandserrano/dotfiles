@@ -10,6 +10,7 @@ run() {
 run "xrandr" --output HDMI-0 --mode 3440x1440 --rate 99.99
 run "picom" -b
 run "nm-applet"
+run "solaar" -w hide
 # run "feh" --randomize --recursive --bg-fill ~/Pictures/Wallpapers/
 run "variety"
 run "steam" -silent
