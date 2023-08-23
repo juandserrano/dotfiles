@@ -124,6 +124,8 @@ mykeyboardlayout = awful.widget.keyboardlayout()
 
 -- Create a textclock widget
 mytextclock = wibox.widget.textclock()
+month_calendar = awful.widget.calendar_popup.month({ opacity = 0.8 })
+month_calendar:attach(mytextclock, "tr")
 
 screen.connect_signal("request::desktop_decoration", function(s)
   -- Each screen has its own tag table.

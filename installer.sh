@@ -1,6 +1,7 @@
 #not a script yet
 
-yay -S brave-bin neovim lazygit variety scrot volumeicon picom alacritty obsidian solaar github-cli tmux timeshift
+yay -S brave-bin neovim lazygit variety scrot volumeicon picom alacritty \
+  obsidian solaar github-cli tmux timeshift zathura zathura-pdf-poppler
 python -m ensurepip --upgrade
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.4/install.sh | bash
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
