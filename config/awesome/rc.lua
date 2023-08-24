@@ -481,11 +481,11 @@ ruled.client.connect_signal("request::rules", function()
     }
   }
 
-  -- To tag 3: Steam
+  -- To tag 3: Secondary
   ruled.client.append_rule {
-    id         = "steam",
+    id         = "secondary",
     rule_any   = {
-      class = { "steam" },
+      class = { "steam", "thunderbird" },
     },
     properties = {
       tag = "3"
