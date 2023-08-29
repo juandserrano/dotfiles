@@ -1,6 +1,0 @@
-require('jserrano.packer')
-require('jserrano.settings')
-require('jserrano.lsp')
-require('jserrano.dap')
-require('jserrano.keymap')
-require('jserrano.autocmds')
