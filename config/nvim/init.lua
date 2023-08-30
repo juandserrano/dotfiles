@@ -110,7 +110,7 @@ require('lazy').setup({
   },
 
   -- Useful plugin to show you pending keybinds.
-  -- { 'folke/which-key.nvim', opts = {} },
+  { 'folke/which-key.nvim', opts = {} },
   {
     -- Adds git related signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
@@ -168,8 +168,20 @@ require('lazy').setup({
     },
   },
 
-  -- "gc" to comment visual regions/lines
-  -- { 'numToStr/Comment.nvim', opts = {} },
+  -- "<leader>/" to comment visual regions/lines
+  {
+    'numToStr/Comment.nvim',
+    opts = {
+      toggler = {
+        line = '<leader>/',
+        block = '<leader><space>/',
+      },
+      opleader = {
+        line = '<leader>/',
+        block = '<leader><space>/',
+      },
+    }
+  },
 
   -- Fuzzy Finder (files, lsp, etc)
   {
@@ -239,6 +251,11 @@ vim.o.mouse = 'a'
 -- Enable break indent
 vim.o.breakindent = true
 
+vim.o.tabstop = 4
+vim.o.softtabstop = 4
+vim.o.shiftwidth = 4
+vim.o.expandtab = true
+
 -- Save undo history
 vim.o.undofile = true
 
@@ -251,7 +268,7 @@ vim.wo.signcolumn = 'yes'
 
 -- Decrease update time
 vim.o.updatetime = 250
-vim.o.timeoutlen = 300
+vim.o.timeoutlen = 500
 
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = 'menuone,noselect'
@@ -309,9 +326,10 @@ require('telescope').setup {
 pcall(require('telescope').load_extension, 'fzf')
 
 -- See `:help telescope.builtin`
-vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles, { desc = '[?] Find recently opened files' })
-vim.keymap.set('n', '<leader><space>n', require('telescope.builtin').buffers, { desc = '[ ] Find existing buffers' })
-vim.keymap.set('n', '<leader>/', function()
+vim.keymap.set('n', '<leader><space>n', require('telescope.builtin').oldfiles,
+  { desc = '[?] Find recently opened files' })
+vim.keymap.set('n', '<leader><space>b', require('telescope.builtin').buffers, { desc = 'Find existing buffers' })
+vim.keymap.set('n', '<leader>f', function()
   -- You can pass additional configuration to telescope to change theme, layout, etc.
   require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
     winblend = 10,
@@ -336,7 +354,7 @@ require('nvim-treesitter.configs').setup {
   auto_install = false,
 
   highlight = { enable = true },
-  indent = { enable = true },
+  indent = { enable = false },
   incremental_selection = {
     enable = true,
     keymaps = {
