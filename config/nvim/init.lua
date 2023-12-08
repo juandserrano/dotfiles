@@ -138,11 +138,34 @@ require('lazy').setup({
   --  priority = 1000
   -- },
   {
+    "craftzdog/solarized-osaka.nvim",
+    lazy = true,
+    priority = 1000,
+    opts = function()
+      return {
+        transparent = true,
+      }
+    end,
+  },
+  {
     "ellisonleao/gruvbox.nvim",
     priority = 1000,
     config = function()
-      vim.cmd.colorscheme 'gruvbox'
+      vim.cmd.colorscheme 'solarized-osaka'
     end
+  },
+  -- animations
+  {
+    "echasnovski/mini.animate",
+    event = "VeryLazy",
+    opts = {
+      cursor = {
+        enable = false,
+      },
+      scroll = {
+        enable = false,
+      },
+    },
   },
   {
     -- Set lualine as statusline
@@ -158,14 +181,12 @@ require('lazy').setup({
     },
   },
   {
-    -- Add indentation guides even on blank lines
-    'lukas-reineke/indent-blankline.nvim',
-    -- Enable `lukas-reineke/indent-blankline.nvim`
-    -- See `:help indent_blankline.txt`
-    opts = {
-      char = '┊',
-      show_trailing_blankline_indent = false,
-    },
+    "lukas-reineke/indent-blankline.nvim",
+    main = "ibl",
+    opts = {},
+    start = function()
+      require("ibl").setup()
+    end
   },
 
   -- "<leader>/" to comment visual regions/lines
