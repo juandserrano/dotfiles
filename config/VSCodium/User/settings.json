@@ -1,180 +1,116 @@
 {
-  "breadcrumbs.enabled": false,
-  "editor.scrollbar.vertical": "hidden",
-  "editor.scrollbar.horizontal": "hidden",
-  "editor.fontSize": 22,
-  "editor.matchBrackets": "always",
-  "editor.hideCursorInOverviewRuler": true,
-  "editor.overviewRulerBorder": false,
-  "editor.glyphMargin": false,
-  // This is for making the base-atelier-dune theme looks smooth on the variables
-  "editor.tokenColorCustomizations": {
-    "variables": "#a6a28c",
-    "comments": "#2ea542",
-  },
-  // Suggestions
-  "editor.wordBasedSuggestions": false,
-  "editor.acceptSuggestionOnEnter": "on",
-  "editor.quickSuggestions": {
-    "other": true,
-    "comments": false,
-    "strings": false
-  },
-  "editor.roundedSelection": false,
+  "workbench.colorTheme": "Tokyo Night",
+  "editor.fontSize": 18,
+  "editor.tabSize": 2,
   "editor.minimap.enabled": false,
-  "editor.renderLineHighlight": "none",
-  "editor.cursorStyle": "block",
-  "editor.cursorBlinking": "solid",
-  "editor.folding": false,
-  "editor.autoClosingBrackets": "never",
-  "editor.insertSpaces": false,
-  "editor.formatOnSave": true,
-  "diffEditor.renderSideBySide": false,
-  // Vim setup
-  "vim.enableNeovim": false,
-  "vim.neovimPath": "/usr/bin/nvim",
-  "vim.searchHighlightColor": "rgba(150, 255, 255, 0.3)",
-  "vim.leader": "<space>",
-  "vim.cursorStylePerMode.insert": "line",
-  "vim.easymotion": true,
-  "vim.incsearch": true,
-  "vim.useSystemClipboard": true,
-  "vim.useCtrlKeys": true,
+  "workbench.sideBar.location": "right",
+  "window.zoomLevel": 2,
+  "git.autofetch": true,
+  "editor.lineNumbers": "relative",
+  "vim.leader": "<Space>",
   "vim.hlsearch": true,
-  "vim.handleKeys": {
-    "<C-a>": false,
-    "<C-f>": false
-  },
-  "vim.smartRelativeLine": true,
   "vim.normalModeKeyBindingsNonRecursive": [
+    // NAVIGATION
+    // switch b/w buffers
     {
-      "before": [
-        "<leader>",
-        "t"
-      ],
-      "after": [],
-      "commands": [
-        {
-          "command": "workbench.action.terminal.focus"
-        }
-      ]
+      "before": ["<S-h>"],
+      "commands": [":bprevious"]
     },
     {
-      "before": [
-        "<leader>",
-        "<leader>",
-        "n"
-      ],
-      "after": [],
-      "commands": [
-        {
-          "command": "workbench.action.quickOpen"
-        }
-      ]
+      "before": ["<S-l>"],
+      "commands": [":bnext"]
+    },
+    // splits
+    {
+      "before": ["leader", "v"],
+      "commands": [":vsplit"]
     },
     {
-      "before": [
-        "<leader>",
-        "h"
-      ],
-      "after": [],
-      "commands": [
-        {
-          "command": ":nohl"
-        }
-      ]
+      "before": ["leader", "s"],
+      "commands": [":split"]
+    },
+    // panes
+    {
+      "before": ["leader", "h"],
+      "commands": ["workbench.action.focusLeftGroup"]
     },
     {
-      "before": [
-        "K"
-      ],
-      "after": [
-        "g",
-        "h"
-      ],
+      "before": ["leader", "j"],
+      "commands": ["workbench.action.focusBelowGroup"]
     },
     {
-      "before": [
-        "<leader>",
-        "e"
-      ],
-      "commands": [
-        {
-          "command": "workbench.action.toggleSidebarVisibility"
-        }
-      ]
+      "before": ["leader", "k"],
+      "commands": ["workbench.action.focusAboveGroup"]
     },
     {
-      "before": [
-        "g",
-        "r"
-      ],
-      "commands": [
-        {
-          "command": "editor.action.goToReferences"
-        }
-      ]
+      "before": ["leader", "l"],
+      "commands": ["workbench.action.focusRightGroup"]
+    },
+    // NICE TO HAVE
+    {
+      "before": ["leader", "w"],
+      "commands": [":w!"]
     },
     {
-      "before": [
-        "<leader>",
-        "l",
-        "r"
-      ],
-      "commands": [
-        {
-          "command": "editor.action.rename"
-        }
-      ]
+      "before": ["leader", "q"],
+      "commands": [":q!"]
+    },
+    {
+      "before": ["[", "d"],
+      "commands": ["editor.action.marker.prev"]
+    },
+    {
+      "before": ["]", "d"],
+      "commands": ["editor.action.marker.next"]
+    },
+    {
+      "before": ["<leader>", "c", "a"],
+      "commands": ["editor.action.quickFix"]
+    },
+    {
+      "before": ["leader", "f"],
+      "commands": ["workbench.action.quickOpen"]
+    },
+    {
+      "before": ["leader", "p"],
+      "commands": ["editor.action.formatDocument"]
+    },
+    {
+      "before": ["K"],
+      "commands": ["editor.action.showDefinitionPreviewHover"]
+    },
+    // toggle comment selection
+    {
+      "before": ["leader", "/"],
+      "commands": ["editor.action.commentLine"]
     }
   ],
-  "workbench.startupEditor": "newUntitledFile",
-  "javascript.format.enable": false,
-  "window.closeWhenEmpty": true,
-  "diffEditor.renderIndicators": false,
-  "typescript.updateImportsOnFileMove.enabled": "always",
-  "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "go.buildFlags": [
-    "-v"
+  "vim.visualModeKeyBindings": [
+    // Stay in visual mode while indenting
+    {
+      "before": ["<"],
+      "commands": ["editor.action.outdentLines"]
+    },
+    {
+      "before": [">"],
+      "commands": ["editor.action.indentLines"]
+    },
+    // Move selected lines while staying in visual mode
+    {
+      "before": ["J"],
+      "commands": ["editor.action.moveLinesDownAction"]
+    },
+    {
+      "before": ["K"],
+      "commands": ["editor.action.moveLinesUpAction"]
+    },
+    // toggle comment selection
+    {
+      "before": ["leader", "/"],
+      "commands": ["editor.action.commentLine"]
+    }
   ],
-  "go.useLanguageServer": true,
-  "go.autocompleteUnimportedPackages": true,
-  "go.testEnvFile": "",
-  "go.toolsManagement.autoUpdate": true,
-  "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[html]": {
-    "editor.defaultFormatter": "vscode.html-language-features"
-  },
-  "javascript.updateImportsOnFileMove.enabled": "always",
   "[jsonc]": {
-    "editor.defaultFormatter": "vscode.json-language-features"
-  },
-  "editor.cursorSurroundingLines": 10,
-  "workbench.enableExperiments": false,
-  "explorer.compactFolders": false,
-  "telemetry.telemetryLevel": "off",
-  "vim.cursorStylePerMode.normal": "block",
-  "vim.neovimUseConfigFile": true,
-  "explorer.confirmDragAndDrop": false,
-  "editor.tabSize": 4,
-  "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
-  "editor.wordWrap": "off",
-  "extensions.ignoreRecommendations": true,
-  "editor.guides.indentation": false,
-  "workbench.colorCustomizations": {
-    // "editorError.foreground": "#3a2525",
-    // "editorWarning.foreground": "#00000000",
-    // "editorInfo.foreground": "#00000000",
-  },
-  "workbench.colorTheme": "Monokai Dimmed",
-  "security.workspace.trust.untrustedFiles": "open",
-  "workbench.sideBar.location": "right",
-  "editor.fontFamily": "'Caskaydia Cove Nerd Font','Droid Sans Mono', 'monospace', monospace"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
