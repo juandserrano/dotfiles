@@ -4,13 +4,24 @@
   "editor.tabSize": 2,
   "editor.minimap.enabled": false,
   "workbench.sideBar.location": "right",
-  "window.zoomLevel": 2,
+  "window.zoomLevel": 0.5,
   "git.autofetch": true,
   "editor.lineNumbers": "relative",
+  "vim.useCtrlKeys": true,
   "vim.leader": "<Space>",
   "vim.hlsearch": true,
+  "editor.cursorSurroundingLines": 8,
   "vim.normalModeKeyBindingsNonRecursive": [
     // NAVIGATION
+    // Search centered
+    {
+      "before": ["n"],
+      "after": ["n", "z", "z"]
+    },
+    {
+      "before": ["N"],
+      "after": ["N", "z", "z"]
+    },
     // switch b/w buffers
     {
       "before": ["<S-h>"],
@@ -45,6 +56,10 @@
     {
       "before": ["leader", "l"],
       "commands": ["workbench.action.focusRightGroup"]
+    },
+    {
+      "before": ["leader", "l"],
+      "commands": ["editor."]
     },
     // NICE TO HAVE
     {
@@ -83,7 +98,12 @@
     {
       "before": ["leader", "/"],
       "commands": ["editor.action.commentLine"]
-    }
+    },
+    // toggle sidebar explorer
+    {
+      "before": ["<C-e>"],
+      "commands": ["workbench.action.toggleSidebarVisibility"]
+    },
   ],
   "vim.visualModeKeyBindings": [
     // Stay in visual mode while indenting
@@ -112,5 +132,8 @@
   ],
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  "glassit.alpha": 250,
+  "glassit.step": 10,
+  "redhat.telemetry.enabled": false,
 }
