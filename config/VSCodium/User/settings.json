@@ -91,6 +91,14 @@
       "commands": ["editor.action.formatDocument"]
     },
     {
+      "before": ["g","r"],
+      "commands": ["editor.action.goToReferences"]
+    },
+    {
+      "before": ["g","d"],
+      "commands": ["editor.action.revealDefinition"]
+    },
+    {
       "before": ["K"],
       "commands": ["editor.action.showDefinitionPreviewHover"]
     },
@@ -101,7 +109,7 @@
     },
     // toggle sidebar explorer
     {
-      "before": ["<C-e>"],
+      "before": ["<leader>", "e"],
       "commands": ["workbench.action.toggleSidebarVisibility"]
     },
   ],
