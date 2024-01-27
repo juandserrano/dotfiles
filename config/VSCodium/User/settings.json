@@ -10,6 +10,9 @@
   "vim.useCtrlKeys": true,
   "vim.leader": "<Space>",
   "vim.hlsearch": true,
+  "vim.highlightedyank.enable": true,
+  "vim.highlightedyank.duration": 200,
+  "vim.highlightedyank.color": "rgba(248, 193, 10, 0.8)",
   "editor.cursorSurroundingLines": 8,
   "vim.normalModeKeyBindingsNonRecursive": [
     // NAVIGATION
@@ -21,6 +24,14 @@
     {
       "before": ["N"],
       "after": ["N", "z", "z"]
+    },
+    {
+      "before": ["<C-U>"],
+      "after": ["<C-U>", "z", "z"]
+    },
+    {
+      "before": ["<C-D>"],
+      "after": ["<C-D>", "z", "z"]
     },
     // switch b/w buffers
     {
@@ -57,18 +68,10 @@
       "before": ["leader", "l"],
       "commands": ["workbench.action.focusRightGroup"]
     },
-    {
-      "before": ["leader", "l"],
-      "commands": ["editor."]
-    },
     // NICE TO HAVE
     {
-      "before": ["leader", "w"],
-      "commands": [":w!"]
-    },
-    {
       "before": ["leader", "q"],
-      "commands": [":q!"]
+      "commands": [":q"]
     },
     {
       "before": ["[", "d"],
@@ -91,11 +94,11 @@
       "commands": ["editor.action.formatDocument"]
     },
     {
-      "before": ["g","r"],
+      "before": ["g", "r"],
       "commands": ["editor.action.goToReferences"]
     },
     {
-      "before": ["g","d"],
+      "before": ["g", "d"],
       "commands": ["editor.action.revealDefinition"]
     },
     {
@@ -111,9 +114,14 @@
     {
       "before": ["<leader>", "e"],
       "commands": ["workbench.action.toggleSidebarVisibility"]
-    },
+    }
   ],
   "vim.visualModeKeyBindings": [
+    // Clipboard
+    {
+      "before": ["leader", "y"],
+      "commands": ["editor.action.clipboardCopyAction"]
+    },
     // Stay in visual mode while indenting
     {
       "before": ["<"],
@@ -141,7 +149,13 @@
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "glassit.alpha": 250,
+  "glassit.alpha": 245,
   "glassit.step": 10,
   "redhat.telemetry.enabled": false,
+  "zenMode.centerLayout": false,
+  "zenMode.fullScreen": false,
+  "zenMode.hideLineNumbers": false,
+  "zenMode.showTabs": "none",
+  "zenMode.silentNotifications": false,
+  "editor.stickyScroll.enabled": true
 }
