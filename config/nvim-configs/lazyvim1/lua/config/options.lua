@@ -21,7 +21,7 @@ vim.opt.incsearch = true
 vim.opt.timeoutlen = 250
 vim.opt.showmatch = true
 vim.opt.synmaxcol = 300 -- stop syntax highlighting for performance
-vim.opt.laststatus = 2 -- always show statusline
+vim.opt.laststatus = 2  -- always show statusline
 
 -- Sidebar
 vim.opt.numberwidth = 1
@@ -29,9 +29,9 @@ vim.opt.showcmd = true
 vim.opt.cmdheight = 0
 
 -- Search
-vim.o.incsearch = true -- starts searching as soon as typing, without enter needed
+vim.o.incsearch = true  -- starts searching as soon as typing, without enter needed
 vim.o.ignorecase = true -- ignore letter case when searching
-vim.o.smartcase = true -- case insentive unless capitals used in searcher
+vim.o.smartcase = true  -- case insentive unless capitals used in searcher
 
 vim.opt.termguicolors = true
 
@@ -47,20 +47,3 @@ vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, fl
 vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, float)
 
 vim.api.nvim_set_hl(0, "FloatBorder", { fg = "#d8bd92" })
-
-vim.filetype.add({
-  extension = {
-    mdx = "mdx",
-    analog = "analog",
-  },
-})
-
-vim.filetype.add({
-  extension = {
-    [".all-contributorsrc"] = ".all-contributorsrc",
-  },
-})
-
-vim.treesitter.language.register("markdown", "mdx")
-vim.treesitter.language.register("vue", "analog")
-vim.treesitter.language.register("json", ".all-contributorsrc")
