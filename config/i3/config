@@ -60,7 +60,7 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # wizzi's own startup stuff
-exec --no-startup-id picom -b -f
+exec --no-startup-id picom -b -f -i 0.8
 exec --no-startup-id polybar
 exec --no-startup-id xset r rate 200
 exec --no-startup-id feh --bg-scale --zoom fill /home/wizzi/Pictures/Wallpapers/Wallpaper-Bank/wallpapers/anime-girl-abyss.png 
