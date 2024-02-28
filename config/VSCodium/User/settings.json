@@ -1,5 +1,5 @@
 {
-  "workbench.colorTheme": "Tokyo Night",
+  "workbench.colorTheme": "Catppuccin Mocha",
   "editor.fontSize": 18,
   "editor.tabSize": 2,
   "editor.minimap.enabled": false,
@@ -149,6 +149,9 @@
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "remote.SSH.remotePlatform": {
+    "172.20.127.43": "linux"
+  },
   "glassit.alpha": 245,
   "glassit.step": 10,
   "redhat.telemetry.enabled": false,
@@ -157,5 +160,8 @@
   "zenMode.hideLineNumbers": false,
   "zenMode.showTabs": "none",
   "zenMode.silentNotifications": false,
-  "editor.stickyScroll.enabled": true
+  "editor.stickyScroll.enabled": true,
+  "diffEditor.ignoreTrimWhitespace": false,
+  "gitlens.hovers.currentLine.over": "line",
+  "editor.fontFamily": "IosevkaTerm Nerd Font, Consolas, 'Courier New', monospace"
 }
