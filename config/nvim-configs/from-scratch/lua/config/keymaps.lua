@@ -3,7 +3,6 @@ local builtin = require("telescope.builtin")
 vim.keymap.set("n", "<leader>ff", builtin.find_files, {})
 vim.keymap.set("n", "<leader>fw", builtin.live_grep, {})
 vim.keymap.set("n", "<leader>fb", builtin.buffers, {})
-vim.keymap.set("n", "<leader>fo", builtin.buffers, {})
 vim.keymap.set("n", "<leader>fg", builtin.git_files, {})
 vim.keymap.set("n", "<leader>fd", builtin.diagnostics, {})
 
@@ -11,8 +10,8 @@ vim.keymap.set("n", "<leader>fd", builtin.diagnostics, {})
 vim.keymap.set("n", "<leader>e", ":Neotree toggle<CR>", {})
 
 -- LSP
-vim.keymap.set("n", "<leader>lN", vim.diagnostic.goto_prev)
-vim.keymap.set("n", "<leader>ln", vim.diagnostic.goto_next)
+vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
+vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
 -- vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist)
 vim.keymap.set("n", "gD", vim.lsp.buf.declaration, {})
 vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
