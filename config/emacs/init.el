@@ -1,3 +1,4 @@
+
 (add-to-list 'default-frame-alist '(width . 100))
 (add-to-list 'default-frame-alist '(height . 40))
 
@@ -10,7 +11,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(dashboard magit eshell-syntax-highlighting all-the-icons-dired all-the-icons projectile dap-mode lsp-mode company evil-collection which-key general evil)))
+   '(lsp-ui yasnippet nerd-icons-dired nerd-icons dashboard magit eshell-syntax-highlighting all-the-icons-dired all-the-icons projectile dap-mode lsp-mode company evil-collection which-key general evil)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -25,13 +26,30 @@
 (setq evil-collection-mode-list '(dashboard dired ibuffer))
 (evil-collection-init)
 
-(use-package flycheck
-  :ensure t
-  :defer t
-  :diminish
-  :init (global-flycheck-mode))
+(require 'lsp-mode)
+(add-hook 'c-mode-hook #'lsp)
+(add-hook 'c++-mode-hook #'lsp)
+
+;; (use-package lsp-ui
+;;   :commands lsp-ui-mode)
+;; 
+;; (use-package flycheck
+;;   :ensure t
+;;   :defer t
+;;   :diminish
+;;   :init (global-flycheck-mode))
 
 ;; (setq initial-buffer-choice (lambda () (dired "~/dev")))
+
+(use-package nerd-icons
+  :custom
+  (nerd-icons-font-family "Symbols Nerd Font Mono")
+)
+
+(use-package nerd-icons-dired
+  :hook
+  (dired-mode . nerd-icons-dired-mode)
+)
 
 (use-package dashboard
   :ensure t
@@ -67,6 +85,11 @@
       which-key-idle-delay 0.5
       which-key-separator " -> " )
 
+;; (with-eval-after-load 'lsp-mode
+;;   (add-hook 'lsp-mode-hook #'lsp-enable-which-key-integration)
+;;   (require 'dap-cpptools)
+;;   (yas-global-mode))
+
 (use-package general
  :config
  (general-evil-setup)
@@ -97,8 +120,10 @@
   "tl" '(display-line-numbers-mode :wk "Toggle line numbers")
   "tt" '(visual-line-mode :wk "Toggle truncated lines")
 
-  "tl" '(display-line-numbers-mode :wk "Toggle line numbers")
-  "tt" '(visual-line-mode :wk "Toggle truncated lines")
+  "c" '(:ignore t :wk "Compilation")
+  "cb" '(display-line-numbers-mode :wk "Build")
+  "cd" '(visual-line-mode :wk "Debug")
+  "cr" '(visual-line-mode :wk "Run")
 
   "s" '(save-buffer :wk "Save buffer")
   "q" '(quit-buffer :wk "Quit buffer")
@@ -112,17 +137,20 @@
 		    :font "JetBrainsMono NF"
 		    :height 110
 		    :weight 'medium)
+(set-face-attribute 'variable-pitch nil
+		    :font "JetBrainsMono NF"
+		    :height 120
+		    :weight 'medium)
+(set-face-attribute 'fixed-pitch nil
+		    :font "JetBrainsMono NF"
+		    :height 110
+		    :weight 'medium)
 (set-face-attribute 'font-lock-comment-face nil
 		    :slant 'italic)
 (set-face-attribute 'font-lock-keyword-face nil
 		    :slant 'italic)
 (add-to-list 'default-frame-alist '(font . "JetBrainsMono NF-11"))
 
-(use-package all-the-icons
-  :ensure t
-  :if (display-graphic-p))
-(use-package all-the-icons-dired
-  :hook (dired-mode . (lambda () (all-the-icons-dired-mode t))))
 (use-package eshell-syntax-highlighting
   :after esh-mode
   :config
