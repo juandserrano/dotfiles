@@ -4,9 +4,9 @@ while :
 do
   state=$(tailscale status)
   if [ "$state" = "Tailscale is stopped." ]; then
-    echo ''
+    echo ''
   else
-    echo 'Tailscale'
+    echo ''
   fi
   sleep 5
 done

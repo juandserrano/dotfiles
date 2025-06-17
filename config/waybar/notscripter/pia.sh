@@ -1,7 +1,11 @@
 #!/bin/bash
 while :
 do
-  state="PIA: $(piactl get connectionstate)"
-  echo $state
+  state="$(piactl get connectionstate)"
+  if [ "$state" = "Disconnected" ]; then
+    echo ''
+  else
+    echo ''
+  fi
   sleep 5
 done

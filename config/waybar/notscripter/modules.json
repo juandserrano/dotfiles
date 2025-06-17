@@ -41,6 +41,7 @@
   "custom/pia": {
     "exec": "/home/thor/dotfiles/config/waybar/notscripter/pia.sh",
     "format": "{text}",
+    "tooltip-format": "PIA",
     "format-icons": {
       "on": "",
       "off": "🎵"
@@ -61,10 +62,13 @@
   "custom/tailscale": {
     "exec": "/home/thor/dotfiles/config/waybar/notscripter/tailscale.sh",
     "format": "{text}",
+    "tooltip-format": "Tailscale",
     "format-icons": {
       "on": "",
       "off": "🎵"
     },
+    "on-click-right": "tailscale down",
+    "on-click": "tailscale up"
   },
 
 
