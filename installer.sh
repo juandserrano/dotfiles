@@ -3,8 +3,10 @@
 # not a working script yet
 
 #Varios
-yay -S brave-bin neovim lazygit variety scrot volumeicon picom alacritty \
-  obsidian solaar github-cli tmux timeshift zathura zathura-pdf-poppler
+yay -Sy firefox brave-bin neovim lazygit variety scrot volumeicon picom alacritty \
+  obsidian solaar github-cli tmux timeshift zathura zathura-pdf-poppler \
+  base-devel tar unzip gzip bluez bluez-utils piavpn-bin wine-stable wine \
+  less 
 
 #pip-nvm-rust
 python -m ensurepip --upgrade

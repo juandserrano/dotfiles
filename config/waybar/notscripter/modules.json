@@ -10,9 +10,9 @@
       "active": "",
       "default": ""
     },
-    "persistent-workspaces": {
-      "*": 5
-    }
+    // "persistent-workspaces": {
+    //   "*": 5
+    // }
   },
 
   // Hyprland Window
@@ -135,13 +135,14 @@
   "network": {
     "format": "{ifname}",
     "format-wifi": "  {signalStrength}%  {bandwidthDownBytes}  {bandwidthUpBytes} ",
-    "format-ethernet": "   {bandwidthDownBytes}  {bandwidthUpBytes} ",
+    "format-ethernet": " {bandwidthDownBytes}  {bandwidthUpBytes} ",
     "format-disconnected": "Not connected",
     "tooltip-format": "  {ifname} via {gwaddri}",
     "tooltip-format-wifi": "   {essid} ({signalStrength}%)",
     "tooltip-format-ethernet": "  {ifname} ({ipaddr}/{cidr})",
     "tooltip-format-disconnected": "Disconnected",
-    "max-length": 50,
+    "max-length": 25,
+    "min-length": 25,
     "interval": 1,
     "on-click": "nm-connection-editor"
   },
